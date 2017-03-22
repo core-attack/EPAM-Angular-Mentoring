@@ -1,0 +1,86 @@
+﻿body {
+    margin: 0 auto;
+    width: 95%;
+}
+h3 {
+    margin: 10px 0;
+}
+.copyright {
+    text-align: center; 
+}
+form.login {
+    padding-left: 20px;
+    width: 300px;
+    margin: 0 auto;
+}
+.error {
+    color: #a94442;
+}
+form.login .form-group, form.login span.error {
+    display: inline-block;
+}
+form.login .form-group{
+    width: 70%;
+}
+#user-info {
+    float: right;
+    margin: 10px 10px;
+}
+#user-info a {
+    display: block;
+    text-align: center;
+}
+#searchCourse, #addCourse {
+    display: inline-block;
+}
+#addCourse {
+    float: right;
+}
+h3.name, span.duration, span.date {
+    display: inline-block;
+}
+span.date {
+    margin: 10px;
+}
+p.description {
+    text-align: justify;
+}
+span.duration {
+    margin-left: 20px;
+}
+#coursesList {
+    margin: 20px 0
+}
+.course .options, span.date {
+    float: right;
+}
+.course {
+    min-width: 500px;
+}
+form.course{
+    width: 600px;
+    margin: 0 auto;
+}
+form.course button{
+    float: right;
+    margin-left: 5px;
+}
+span.author:after{
+    content: ", "
+}
+span.author.last:after{
+    content: ""
+}
+#inputTime{
+    width: 50%;
+}
+span.duration{
+    margin-left: 10px;
+}
+#inputTime, span.duration{
+    display: inline-block;
+}
+form[name=courseForm] label:after{
+    content: '*';
+    color: red;
+}

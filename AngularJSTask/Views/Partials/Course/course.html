@@ -1,0 +1,43 @@
+﻿<form class="course form-horizontal" name="courseForm" >
+    <div class="form-group" >
+        <label for="inputName" class="col-sm-3 control-label">Название</label>
+        <div class="col-sm-9">
+            <input type="text" class="form-control" id="inputName" fill-breadcrumbs placeholder="Название" name="name" ng-model="course.name" required>
+        </div>
+    </div>
+    <div class="form-group">
+        <label for="inputDescription" class="col-sm-3 control-label">Описание</label>
+        <div class="col-sm-9">
+            <textarea class="form-control" id="inputDescription" placeholder="Описание" name="description" ng-model="course.description" required></textarea>
+        </div>
+    </div>
+    <div class="form-group">
+        <label for="inputDate" class="col-sm-3 control-label">Дата</label>
+        <div class="col-sm-9">
+            <input type="date" class="form-control" id="inputDate" placeholder="Дата" name="date" ui-date="dateOptions" ng-model="course.date" required date-watcher="{{course.date}}">
+        </div>
+        {{course.date}}
+    </div>
+    <div class="form-group">
+        <label for="inputTime" class="col-sm-3 control-label">Продолжительность</label>
+        <div class="col-sm-9">
+            <input type="number" class="form-control" id="inputTime" placeholder="Продолжительность" ng-model="course.durationMinutes" time-minutes="{{course.duration}}" required><span class="duration">{{course.duration | timeFormat}}</span>
+            <input class="hide" name="duration" ng-model="course.duration" time-watcher="{{course.duration}}" required>
+        </div>
+        {{course.duration}}
+    </div>
+    <div class="form-group">
+        <label for="inputAuthors" class="col-sm-3 control-label">Список авторов</label>
+        <div class="col-sm-9">
+            <div class="row" id="inputAuthors">
+                <multiselect></multiselect>
+            </div>
+        </div>
+
+        
+    </div>
+    <button type="button" class="btn btn-default" ng-click="cancel()">Отмена</button>
+    <button type="submit" class="btn btn-primary" ng-click="save()" >Сохранить</button>
+</form>
+<init></init>
+<initBreadcrumbs></initBreadcrumbs>

@@ -1,0 +1,31 @@
+﻿<div id="courses" ng-controller="CoursesController as cc">
+    <form class="form-inline" id="searchCourse" name="cc.filterForm" ng-submit="setFilter()" >
+        <div class="form-group">
+            <label for="inputFilter" class="sr-only">Фильтр</label>
+            <input type="text" class="form-control" name="inputFilter" id="inputFilter" ng-model="searchInputText" placeholder="Фрагмент имени или дата"/>
+        </div>
+        <button type="submit" class="btn btn-default" >Найти</button>
+    </form>
+    <a href="/#/courses/new" class="btn btn-primary" id="addCourse">Добавить курс</a>
+    <div id="coursesList">
+        <div class="course panel panel-info" ng-animate="'animate'" course-action="{{removedCourse}}" ng-repeat="course in courses | courseFilter:searchText | orderBy:'name' track by course.name" id="course-{{course.id}}"><!--Unexpected end of input из-за course-action="{{removedCourse}}" -->
+            <div class="panel-heading">
+                <h3 class="name">{{course.name}}</h3>
+                <span class="duration">{{course.duration | timeFormat}}</span>
+                <div class="options">
+                    <a href="/#/courses/{{course.id}}" ng-click="onEditClick(course.name)" type="button" class="btn btn-warning glyphicon glyphicon-pencil"></a>
+                    <a href="" ng-click="onDeleteClick(course)" type="button" class="btn btn-danger glyphicon glyphicon-remove"></a>
+                </div>
+                <span class="date">{{course.date | dateFormat}}</span>
+                
+            </div>
+            <div class="panel-body">
+                <p class="description">{{course.description}}</p>
+                <p class="authors">
+                    Авторы: <span class="author" ng-repeat="author in course.authors track by $index" ng-class="{'last':$last}">{{author.name}}</span>
+                </p>
+            </div>
+        </div>
+    </div>
+</div>
+

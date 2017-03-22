@@ -1,0 +1,24 @@
+﻿
+<form name="loginForm" class="login" ng-controller="LoginController" ng-submit="submit()">
+    <div class="alert alert-warning" role="alert" id="errorMessage">Неверно введен логин или пароль</div>
+    <div class="form-group" ng-class="showLoginErrorMessage() ? 'has-error' : ''">
+        <label for="login">Логин</label>
+        <input type="text" name="login" class="form-control" id="login" placeholder="Логин" ng-model="user.login" ng-pattern="/^[A-Za-z]+$/" required>
+    </div>
+    <span ng-show="showLoginErrorMessage()" class="error">
+        * введите
+    </span>
+    <div class="form-group" ng-class="showPasswordErrorMessage() ? 'has-error' : ''">
+        <label for="password">Пароль</label>
+        <input type="password" name="password" class="form-control" id="password" placeholder="Пароль" ng-model="user.password"  ng-pattern="/^[a-zA-Z0-9]+$/" required>
+    </div>
+    <span ng-show="showPasswordErrorMessage()" class="error">
+        * введите
+    </span>
+    <div class="form-group">
+        <button type="submit" class="btn btn-default"
+                ng-disabled="!loginForm.$valid">
+            Войти
+        </button>
+    </div>
+</form>

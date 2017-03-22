@@ -1,0 +1,83 @@
+﻿<!DOCTYPE html>
+<html ng-app="app">
+<head>
+    <title></title>
+    <meta charset="utf-8"/>
+
+    <link href="content/bootstrap.css" rel="stylesheet" />
+    <link href="content/app/app.css" rel="stylesheet"/>
+
+    <script src="scripts/jquery-1.9.1.js"></script>
+    <script src="scripts/bootstrap.js"></script>
+
+</head>
+<body class="panel panel-default" ng-controller="MainController">
+    <div class="panel-heading" >
+        <div id="user-info" ng-show="isLoginLinkVisible() && setLogin()">
+            <span class="name">{{login}}</span>
+            <a href="" ng-click="logOut()">Выйти</a>
+        </div>
+        <div class="page-header">
+            <h1>Logo <small>Курсы</small>
+            </h1>
+        </div>
+        <ol class="breadcrumb" id="breadcrumbs" ng-show="showBreadcrumbs()">
+            <li><a href="#/courses">Курсы</a></li>
+        </ol>
+    </div>
+    <div class="panel-body">
+        <div id="wrapper" ng-view>
+
+        </div>
+    </div>
+
+    <div class="panel-footer copyright">
+        Copyright 2016
+    </div>
+
+    
+
+    <script src="scripts/jquery-1.9.1.min.js"></script>
+    <script src="scripts/multiselect.min.js"></script>
+    <script src="scripts/angular.min.js"></script>
+
+    <script src="scripts/angular-ui/ui-bootstrap.min.js"></script>
+    <script src="scripts/angular-ui/ui-bootstrap-tpls.js"></script>
+
+    <script src="scripts/angular-animate.min.js"></script>
+
+    <script src="scripts/angular-route.min.js"></script>
+    <script src="scripts/angular-mocks.js"></script>
+    <script src="scripts/angular-resource.min.js"></script>
+    <script src="scripts/angular-local-storage.min.js"></script>
+
+    <script src="scripts/app/app.js"></script>
+    <script src="scripts/app/app-config.js"></script>
+
+    <script src="scripts/app/fake-backend.js"></script>
+
+    <script src="scripts/app/directives/authors-watcher-directive.js"></script>
+    <script src="scripts/app/directives/course-action-directive.js"></script>
+    <script src="scripts/app/directives/fill-breadcrumbs-directive.js"></script>
+    <script src="scripts/app/directives/init-directive.js"></script>
+    <script src="scripts/app/directives/time-minutes-directive.js"></script>
+    <script src="scripts/app/directives/time-watcher-directive.js"></script>
+    <script src="scripts/app/directives/modal-confirmation-directives.js"></script>
+    <script src="scripts/app/directives/multiselect-directive.js"></script>
+
+    <script src="scripts/app/services/auth-service.js"></script>
+    <script src="scripts/app/services/course-service.js"></script>
+    <script src="scripts/app/services/author-service.js"></script>
+
+    <script src="scripts/app/filters/courses-filters.js"></script>
+    <script src="scripts/app/filters/date-format-filter.js"></script>
+    <script src="scripts/app/filters/time-format-filter.js"></script>
+
+    <script src="scripts/app/controllers/main-controller.js"></script>
+    <script src="scripts/app/controllers/login-controller.js"></script>
+    <script src="scripts/app/controllers/courses-controller.js"></script>
+    <script src="scripts/app/controllers/course-controller.js"></script>
+    <script src="scripts/app/controllers/modal-confirmation-controller.js"></script>
+
+</body>
+</html>
